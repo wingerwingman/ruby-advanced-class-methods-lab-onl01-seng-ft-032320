@@ -23,14 +23,14 @@ class Song
   end 
   
   def self.create_by_name(name)
-    song = self.create
-    song.name = name 
+    song = self.new 
+    song.name = name
+    @@all << song
     song
-  end 
+  end
   
   def self.find_by_name(name)
-    song = self.all.select { |song| song.name == name }
-    song[0]
+    @@all.find{|x| x.name == name}
   end
   
   def find_or_create_by_name(name)
