@@ -34,7 +34,6 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    #binding.pry
     if !find_by_name(name)
       create_by_name(name)
     else
@@ -61,6 +60,7 @@ class Song
   end
 
   def self.create_from_filename(filename)
+    binding.pry
     song_data = filename.sub!(/.mp3/,'').split(' - ')
 
     song = self.create
