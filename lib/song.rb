@@ -60,7 +60,7 @@ class Song
   end
 
   def self.create_from_filename(filename)
-    binding.pry
+    # binding.pry
     song_data = filename.sub!(/.mp3/,'').split(' - ')
 
     song = self.create
